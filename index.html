@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>E-commerce product page</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/media_queries.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <header>
+    <section class="navbar">
+      <div class="nav-toggler">
+        <img src="images/icon-menu.svg" alt="">
+      </div>
+      <div class="navbar-brand">
+        <a href="#"><img src="images/logo.svg" alt="" class="logo"></a>
+      </div>
+      <section class="mobile-menu">
+        <div class="slide-menu">
+          <div class="close-btn">
+            <img src="images/icon-close.svg" alt="">
+          </div>
+          <div class="navbar-nav">
+            <ul>
+              <li><a href="#">Collections</a></li>
+              <li><a href="#">Men</a></li>
+              <li><a href="#">Women</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="personal-info">
+      <a href="#"><img src="images/icon-cart.svg" alt="" class="cart"></a>
+      <div class="cart-product-amt">
+        <p class="inside">3</p>
+      </div>
+      <div class="basket">
+        <div class="basket-header">
+          <h4>Cart</h4>
+          <img src="images/icon-close.svg" alt="" class="close-box-btn">
+        </div>
+
+        <div class="empty-basket">
+          <p>Your cart is empty.</p>
+        </div>
+        <div class="filled-basket">
+          <div class="product">
+            <div class="product-content">
+              <img class="product-img" src="images/image-product-1-thumbnail.jpg" alt="">
+              <div class="product-detail">
+                <p class="product-name">Fall Limited Edition Sneakers</p>
+                <p class="product-amt">
+                  <span>$125.00</span>
+                  <span>&times;</span>
+                  <span id="amt">3</span>
+                  <span id="total">$375.00</span>
+                </p>
+              </div>
+            </div>
+            <img id="trash" src="images/icon-delete.svg" alt="">
+          </div>
+          <a href="#" class="checkoutBtn">Checkout</a>
+        </div>
+      </div>
+      <a href="#"><img src="images/image-avatar.png" alt="" class="avatar"></a>
+    </section>
+  </header>
+
+  <main class="main-container">
+    <section class="pictures">
+      <div class="lg-pics">
+        <div class="myPictures">
+          <img class="main-image" src="images/image-product-1.jpg" onclick="openModal()">
+        </div>
+
+        <div class="myPictures">
+          <img class="main-image" src="images/image-product-2.jpg" onclick="openModal()">
+        </div>
+
+        <div class="myPictures">
+          <img class="main-image" src="images/image-product-3.jpg" onclick="openModal()">
+        </div>
+
+        <div class="myPictures">
+          <img class="main-image" src="images/image-product-4.jpg" onclick="openModal()">
+        </div>
+      </div>
+
+      <div class="sm-pics">
+        <img class="small-pic mainDemo" src="images/image-product-1-thumbnail.jpg" alt="" onclick="currentPics(1)">
+        <img class="small-pic mainDemo" src="images/image-product-2-thumbnail.jpg" alt="" onclick="currentPics(2)">
+        <img class="small-pic mainDemo" src="images/image-product-3-thumbnail.jpg" alt="" onclick="currentPics(3)">
+        <img class="small-pic mainDemo" src="images/image-product-4-thumbnail.jpg" alt="" onclick="currentPics(4)">
+      </div>
+    </section>
+
+    <!-- the modal/lightbox -->
+    <div id="myModal" class="modal">
+      <span class="close cursor" onclick="closeModal()">&times;</span>
+      <div class="modal-content">
+
+        <div class="mySlides">
+          <img src="images/image-product-1.jpg">
+        </div>
+
+        <div class="mySlides">
+          <img src="images/image-product-2.jpg">
+        </div>
+
+        <div class="mySlides">
+          <img src="images/image-product-3.jpg">
+        </div>
+
+        <div class="mySlides">
+          <img src="images/image-product-4.jpg">
+        </div>
+
+        <!-- Next/previous controls -->
+        <a class="prev arrow" onclick="plusSlides(-1)">&#10094;
+        </a>
+        <a class="next arrow" onclick="plusSlides(1)">&#10095;
+        </a>
+
+        <!-- Thumbnail image controls -->
+        <div class="row">
+
+          <div class="column">
+            <img class="demo" src="images/image-product-1-thumbnail.jpg" onclick="currentSlide(1)">
+          </div>
+
+          <div class="column">
+            <img class="demo" src="images/image-product-2-thumbnail.jpg" onclick="currentSlide(2)">
+          </div>
+
+          <div class="column">
+            <img class="demo" src="images/image-product-3-thumbnail.jpg" onclick="currentSlide(3)">
+          </div>
+
+          <div class="column">
+            <img class="demo" src="images/image-product-4-thumbnail.jpg" onclick="currentSlide(4)">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- mobile pictures -->
+    <section class="mobile-pictures">
+      <img class="mobile-pic" src="images/image-product-1.jpg" alt="">
+      <img class="mobile-pic" src="images/image-product-2.jpg" alt="">
+      <img class="mobile-pic" src="images/image-product-3.jpg" alt="">
+      <img class="mobile-pic" src="images/image-product-4.jpg" alt="">
+      <button class="arrow prev" onclick="plusDivs(-1)">
+        <img src="images/icon-previous.svg" alt="">
+      </button>
+      <button class="arrow next" onclick="plusDivs(+1)">
+        <img src="images/icon-next.svg" alt="">
+      </button>
+    </section>
+
+    <section class="product">
+      <h3>Sneaker Company</3>
+        <h1>Fall Limited Edition Sneakers</h1>
+        <p class="product-intro">These low-profile sneakers are your perfect casual wear companion. Featuring a
+          durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+        <div class="prices">
+          <div class="discounted-price">
+            <h2 class="new-price">$125.00</h2>
+            <h4 class="discount">50%</h4>
+          </div>
+          <h4 class="old-price">$250.00</h4>
+        </div>
+        <div class="btns">
+          <button class="amt-control-btn" type="button" name="button">
+            <img id="amt-decrease" class="minus amt" src="images/icon-minus.svg" alt="">
+            <span class="qty">0</span>
+            <img class="plus amt" src="images/icon-plus.svg" alt="">
+          </button>
+          <a href="#" class="add-to-cart-btn">
+            <img src="images/icon-cart.svg" alt="">
+            <span>Add to cart</span>
+          </a>
+        </div>
+    </section>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>
